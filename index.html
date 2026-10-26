@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cercul de Donatori XVI - Proiecte Comunitare</title>
+    <style>
+        :root {
+            --primary-navy: #152b4c;
+            --button-navy: #1b365d;
+            --button-hover: #122440;
+            --accent-red: #d32f2f;
+            --accent-red-hover: #b71c1c;
+            --bg-white: #ffffff;
+            --text-color: #ffffff;
+            --gray-bg: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--gray-bg);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--bg-white);
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-navy);
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .btn {
+            background-color: var(--button-navy);
+            color: var(--text-color);
+            border: none;
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--button-hover);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-red {
+            background-color: var(--accent-red);
+        }
+
+        .btn-red:hover {
+            background-color: var(--accent-red-hover);
+        }
+
+        .sub-buttons, .sub-section {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+            padding-left: 15px;
+            border-left: 3px solid var(--button-navy);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .sub-buttons .btn {
+            font-size: 14px;
+            padding: 14px 18px;
+        }
+
+        .email-inputs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .email-input {
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .message-box {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fee2e2;
+            color: #991b1b;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cercul de Donatori XVI</h1>
+        
+        <div class="button-group">
+            <!-- Gomb 1 -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjvY_hJEuDKLuZPVi_GBNR8Sjg9mac9WKbWpJWAQtt3Ev83Q/viewform?usp=header" class="btn" target="_blank" onclick="trackClick('Vin la eveniment, unde mă înscriu?')">
+                Vin la eveniment, unde mă înscriu?
+            </a>
+
+            <!-- Gomb 2 -->
+            <button class="btn" onclick="toggleSubButtons('sub-donors'); trackClick('Nu pot participa, dar donez acum')">
+                Nu pot participa, dar donez acum
+            </button>
+            <div id="sub-donors" class="sub-buttons">
+                <a href="https://www.fcmures.org/cerc-de-donatori/ro/cercul-de-donatori-mures-xvi-13/hifa-o-zi-o-alta-perspectiva-a-masik-szek-33.html" class="btn" target="_blank" onclick="trackClick('Donez: HIFA - MÁSIK SZÉK')">
+                    Donez pentru MÁSIK SZÉK O zi. O altă perspectivă - Asociația HIFA
+                </a>
+                <a href="https://www.fcmures.org/cerc-de-donatori/ro/cercul-de-donatori-mures-xvi-13/semiteatru-timp-de-poveste-34.html" class="btn" target="_blank" onclick="trackClick('Donez: Semiteatru - Timp de poveste')">
+                    Donez pentru Timp de poveste - Asociația Semiteatru
+                </a>
+                <a href="https://www.fcmures.org/cerc-de-donatori/ro/cercul-de-donatori-mures-xvi-13/teleki-spatii-noi-voci-noi-arta-contemporana-la-castelul-teleki-din-gornesti-35.html" class="btn" target="_blank" onclick="trackClick('Donez: TELEKI - Spații noi, voci noi')">
+                    Donez pentru TELEKI - Spații noi, voci noi – Artă contemporană la Castelul Teleki din Gorneşti
+                </a>
+            </div>
+
+            <!-- Gomb 3 -->
+            <a href="https://www.fcmures.org/cerc-de-donatori/ro" class="btn" target="_blank" onclick="trackClick('Prima dată vreau să aflu mai mult despre proiecte')">
+                Prima dată vreau să aflu mai mult despre proiecte
+            </a>
+
+            <!-- Gomb 4 -->
+            <button class="btn" onclick="toggleSubButtons('sub-share'); trackClick('Invit alţi prieteni, pot contribui doar cu asta')">
+                Invit alţi prieteni, pot contribui doar cu asta
+            </button>
+            <div id="sub-share" class="sub-buttons">
+                <a href="https://www.facebook.com/events/s/cercul-de-donatori-xv/2297360657665989/?mibextid=wwXIfr&rdid=AEbQ0i5EGhy54TY7&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1H8mRijvGy%2F%3Fmibextid%3DwwXIfr#" class="btn" target="_blank" onclick="trackClick('Distribui evenimentul (Facebook)')">
+                    distribui evenimentul
+                </a>
+                <div class="email-inputs-container">
+                    <input type="email" id="email1" class="email-input" placeholder="e-mail prieten nr 1">
+                    <input type="email" id="email2" class="email-input" placeholder="e-mail prieten nr 2">
+                    <input type="email" id="email3" class="email-input" placeholder="e-mail prieten nr 3">
+                    <button class="btn" style="padding: 12px; font-size: 15px; margin-top: 5px; background-color: #152b4c;" onclick="submitFriendEmails()">Trimite</button>
+                </div>
+            </div>
+
+            <!-- Gomb 5 (Red) -->
+            <button class="btn btn-red" onclick="toggleMessage(); trackClick('Nu particip şi nu donez!')">
+                Nu particip şi nu donez!
+            </button>
+            <div id="no-participation-msg" class="message-box">
+                Ne pare rău dacă niciun proiect nu ţi-a plăcut destul de mult, ca să le susţii. Contăm pe tine în viitor!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxak9yG6iQrMRJHXYgTHf-1BjKnh4kmNtkjw-NkN1-4DSgLxMA8-g4hGPRClFM0VETsfw/exec";
+
+        function trackClick(actionName) {
+            console.log("Tracking click:", actionName);
+            if (WEBHOOK_URL) {
+                fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'click',
+                        action: actionName
+                    })
+                }).catch(err => console.log("Tracking error:", err));
+            }
+        }
+
+        function toggleSubButtons(id) {
+            const el = document.getElementById(id);
+            el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function toggleMessage() {
+            const box = document.getElementById('no-participation-msg');
+            box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function submitFriendEmails() {
+            const e1 = document.getElementById('email1').value.trim();
+            const e2 = document.getElementById('email2').value.trim();
+            const e3 = document.getElementById('email3').value.trim();
+            
+            const emailList = [e1, e2, e3].filter(e => e.length > 0);
+            
+            if (emailList.length === 0) {
+                alert('Vă rugăm să introduceți cel puțin o adresă de e-mail.');
+                return;
+            }
+            
+            if (WEBHOOK_URL) {
+                fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'friend_emails',
+                        emails: emailList,
+                        landingUrl: window.location.href
+                    })
+                }).then(() => {
+                    alert('Mulţumiri! Invitațiile au fost trimise cu succes.');
+                    document.getElementById('email1').value = '';
+                    document.getElementById('email2').value = '';
+                    document.getElementById('email3').value = '';
+                }).catch(err => {
+                    console.log("Error sending emails:", err);
+                    alert('A intervenit o eroare. Vă rugăm să încercați din nou.');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
